@@ -26,8 +26,17 @@ jobs:
         run: npm install --no-audit --prefer-offline
       - name: Build
         run: npm run build
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Debug build output
+        run: |
+          echo "PWD: $(pwd)"
+          echo "Listing repo root:"
+          ls -la
+          echo "Listing build directory (if present):"
+          if [ -d "./build" ]; then ls -la ./build; du -sh ./build || true; else echo "build directory not found"; fi
+      - name: Upload build artifact for Pages
+        uses: actions/upload-pages-artifact@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          path: ./build
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1
