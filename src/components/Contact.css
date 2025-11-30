@@ -1,0 +1,257 @@
+.contact-section {
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.dark-mode .contact-section {
+  background: #1a202c;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-top: 3rem;
+}
+
+.contact-info {
+  position: relative;
+}
+
+.contact-info-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 1rem;
+}
+
+.dark-mode .contact-info-title {
+  color: #e2e8f0;
+}
+
+.contact-info-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4a5568;
+  margin-bottom: 2rem;
+}
+
+.dark-mode .contact-info-text {
+  color: #a0aec0;
+}
+
+.social-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f7fafc;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #2d3748;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.dark-mode .social-link {
+  background: #2d3748;
+  color: #e2e8f0;
+}
+
+.social-link:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+}
+
+.social-link:hover .social-icon {
+  color: white !important;
+}
+
+.social-icon {
+  font-size: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.social-name {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.contact-form {
+  background: #f7fafc;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode .contact-form {
+  background: #2d3748;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background: white;
+  color: #2d3748;
+}
+
+.dark-mode .form-input {
+  background: #1a202c;
+  border-color: #4a5568;
+  color: #e2e8f0;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-input.error {
+  border-color: #f56565;
+}
+
+.form-input::placeholder {
+  color: #a0aec0;
+}
+
+textarea.form-input {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.error-message {
+  display: block;
+  color: #f56565;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+}
+
+.status-message {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.status-message.success {
+  background: #c6f6d5;
+  color: #22543d;
+  border: 2px solid #48bb78;
+}
+
+.dark-mode .status-message.success {
+  background: #22543d;
+  color: #c6f6d5;
+}
+
+.status-message.error {
+  background: #fed7d7;
+  color: #742a2a;
+  border: 2px solid #f56565;
+}
+
+.dark-mode .status-message.error {
+  background: #742a2a;
+  color: #fed7d7;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .social-links {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-decorative {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-section {
+    padding: 4rem 1rem;
+  }
+
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  .contact-info-title {
+    font-size: 1.5rem;
+  }
+
+  .contact-info-text {
+    font-size: 1rem;
+  }
+
+  .social-link {
+    padding: 0.875rem;
+  }
+
+  .social-icon {
+    font-size: 1.5rem;
+  }
+
+  .form-input {
+    padding: 0.875rem;
+  }
+
+  .submit-button {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+  }
+}
